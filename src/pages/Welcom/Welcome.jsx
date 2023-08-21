@@ -1,12 +1,11 @@
-import { Logo } from 'components';
+import { WelcomeContent } from 'components';
 
 import { Section } from './Welcom.styled';
 
 const Welcome = () => {
   return (
     <Section>
-      Welcome
-      <Logo variant="welcome" />
+      <WelcomeContent />
     </Section>
   );
 };

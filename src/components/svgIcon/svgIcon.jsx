@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import sprite from 'assets/icons/sprite.svg';
 
-import { Svg } from './svgIcon.styled';
+import { Svg } from './SvgIcon.styled';
 
 const SvgIcon = ({ svgName, size, stroke = 'none', fill, ...rest }) => {
   return (

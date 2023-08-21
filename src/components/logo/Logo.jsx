@@ -6,16 +6,17 @@ import { Wrap, Icon, IconBox, Text } from './Logo.styled';
 
 const Logo = ({ variant }) => {
   return (
-    <Wrap variant={variant}>
-      <Icon variant={variant}>
-        <IconBox variant={variant}>
-          <SvgIcon svgName="icon-logo" />
-        </IconBox>
-      </Icon>
-      <a href="/">
+    <a href="/">
+      <Wrap variant={variant}>
+        <Icon variant={variant}>
+          <IconBox variant={variant}>
+            <SvgIcon svgName="icon-logo" />
+          </IconBox>
+        </Icon>
+
         <Text variant={variant}>Task Pro</Text>
-      </a>
-    </Wrap>
+      </Wrap>
+    </a>
   );
 };
 

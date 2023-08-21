@@ -1,11 +1,13 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { ThemeProvider } from '@emotion/react';
-import { theme } from 'libs';
 import { Welcome } from 'pages';
+import { useTheme } from 'hooks';
 
 const App = () => {
+  const { currentTheme, setThemeName } = useTheme('violet');
+  console.log(currentTheme);
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={currentTheme}>
       <Routes>
         <Route path="/">
           <Route
