@@ -11,7 +11,7 @@ const useTheme = defaultTheme => {
   useEffect(() => {
     setCurrentTheme({
       ...theme,
-      colors: { ...theme.colors.theme, ...themesKit[themeName] },
+      colors: { ...theme.colors, ...themesKit[themeName] },
     });
   }, [themeName]);
 

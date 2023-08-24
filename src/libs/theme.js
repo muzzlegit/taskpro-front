@@ -9,8 +9,11 @@ export const theme = {
     labelWithout: getToken('#FFFFFF')[30],
     backdrop: getToken('#151515')[30],
 
-    white: getToken('#FFFFFF'),
-    black: getToken('#000000'),
+    token1: getToken('#FFFFFF'),
+    token2: getToken('#000000'),
+    token3: getToken('#1F1F1F'),
+    token4: getToken('#BEDBB0'),
+    token5: getToken('#151515'),
 
     welcomPrimary: getToken('#161616')[100],
     welcomeLogo: {

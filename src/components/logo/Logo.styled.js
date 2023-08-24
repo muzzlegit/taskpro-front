@@ -9,16 +9,27 @@ const variants = {
       height: '48px',
       borderRadius: '8px',
       backgroundColor: theme.colors.welcomeLogo.primary,
+      [`@media (max-width:${theme.breackPoints.mobile})`]: {
+        width: '40px',
+        height: '40px',
+      },
     },
     text: {
       fontSize: '40px',
       fontWeight: 600,
       color: theme.colors.welcomeLogo.text,
+      [`@media (max-width:${theme.breackPoints.mobile})`]: {
+        fontSize: '28px',
+      },
     },
     iconBox: {
       width: '18px',
       height: '24px',
       fill: theme.colors.welcomeLogo.icon,
+      [`@media (max-width:${theme.breackPoints.mobile})`]: {
+        width: '15px',
+        height: '20px',
+      },
     },
   },
   user: {
