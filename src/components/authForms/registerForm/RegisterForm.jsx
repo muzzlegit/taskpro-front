@@ -4,7 +4,7 @@ import { Input } from 'components';
 
 import { authSchema } from 'libs';
 
-import { Container } from './RegisterForm.styled';
+import { Container, Error } from './RegisterForm.styled';
 
 const RegisterForm = () => {
   const { values, errors, touched, handleChange, handleBlur } = useFormik({
@@ -27,10 +27,9 @@ const RegisterForm = () => {
         onChange={handleChange}
         onBlur={handleBlur}
         value={values.name}
+        isError={errors.name}
       />
-      {errors.name && touched.name ? (
-        <span style={{ color: 'white' }}>{errors.name}</span>
-      ) : null}
+      {errors.name && touched.name ? <Error>{errors.name}</Error> : null}
       <Input
         type="email"
         name="email"
@@ -38,7 +37,9 @@ const RegisterForm = () => {
         onChange={handleChange}
         onBlur={handleBlur}
         value={values.email}
+        isError={errors.email && touched.email ? true : null}
       />
+      {errors.email && touched.email ? <Error>{errors.email}</Error> : null}
       <Input
         type="password"
         name="password"
@@ -46,7 +47,11 @@ const RegisterForm = () => {
         onChange={handleChange}
         onBlur={handleBlur}
         value={values.password}
+        isError={errors.password && touched.password ? true : null}
       />
+      {errors.password && touched.password ? (
+        <Error>{errors.password}</Error>
+      ) : null}
     </Container>
   );
 };

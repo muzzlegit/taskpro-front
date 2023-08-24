@@ -14,6 +14,7 @@ function Input({
   value,
   textarea,
   height,
+  isError,
   ...rest
 }) {
   const [showPassword, setShowPassword] = useState(false);
@@ -27,16 +28,18 @@ function Input({
           placeholder={placeholder}
           onChange={onChange}
           value={value}
+          isError={isError}
           {...rest}
         />
       ) : (
         <Wrap>
           <Inputfield
-            type={type}
+            type={showPassword ? 'text' : type}
             name={name}
             placeholder={placeholder}
             onChange={onChange}
             value={value}
+            isError={isError}
             {...rest}
           />
           {type === 'password' ? (
@@ -68,4 +71,5 @@ Input.propTypes = {
   value: PropTypes.string.isRequired,
   textarea: PropTypes.bool,
   height: PropTypes.string,
+  isError: PropTypes.bool,
 };

@@ -16,9 +16,15 @@ export const Inputfield = styled.input(
   props => ({
     backgroundColor: props.theme.colors.token3[100],
     color: props.theme.colors.token1[100],
-    border: `1px solid ${props.theme.colors.token4[80]}`,
+    border: `1px solid ${
+      props.isError ? props.theme.colors.error : props.theme.colors.token4[80]
+    }`,
     ':focus': {
-      border: `2px solid ${props.theme.colors.token4[100]}`,
+      border: `2px solid ${
+        props.isError
+          ? props.theme.colors.error
+          : props.theme.colors.token4[100]
+      }`,
     },
   })
 );
@@ -44,9 +50,15 @@ export const Textarea = styled.textarea(
     height: props.height,
     backgroundColor: props.theme.colors.token3[100],
     color: props.theme.colors.token1[100],
-    border: `1px solid ${props.theme.colors.token4[80]}`,
+    border: `1px solid ${
+      props.isError ? props.theme.colors.error : props.theme.colors.token4[80]
+    }`,
     ':focus': {
-      border: `2px solid ${props.theme.colors.token4[100]}`,
+      border: `2px solid ${
+        props.isError
+          ? props.theme.colors.error
+          : props.theme.colors.token4[100]
+      }`,
     },
   })
 );
