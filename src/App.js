@@ -4,7 +4,7 @@ import { Welcome } from 'pages';
 import { useTheme } from 'hooks';
 
 const App = () => {
-  const { currentTheme, setThemeName } = useTheme('violet');
+  const { currentTheme, setThemeName } = useTheme('dark');
   console.log(currentTheme);
   return (
     <ThemeProvider theme={currentTheme}>

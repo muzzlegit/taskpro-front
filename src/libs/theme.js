@@ -14,12 +14,18 @@ export const theme = {
     token3: getToken('#1F1F1F'),
     token4: getToken('#BEDBB0'),
     token5: getToken('#151515'),
+    token6: getToken('#161616'),
 
     welcomPrimary: getToken('#161616')[100],
     welcomeLogo: {
       primary: getToken('#161616')[100],
       text: getToken('#161616')[100],
       icon: getToken('#FFFFFF')[100],
+    },
+    welcomePrimaryBtn: {
+      primary: getToken('#BEDBB0')[100],
+      text: getToken('#161616')[100],
+      acent: getToken('#9DC888')[100],
     },
   },
   welcomBg: 'linear-gradient(#FFFFFF, #BEDBB0)',
@@ -42,6 +48,13 @@ export const themesKit = {
       primary: getToken('#1F1F1F')[100],
       text: getToken('#FFFFFF')[100],
       icon: getToken('#FFFFFF')[100],
+    },
+    primaryBtn: {
+      primary: getToken('#BEDBB0')[100],
+      text: getToken('#161616')[100],
+      acent: getToken('#9DC888')[100],
+      icon: getToken('#161616')[100],
+      stroke: getToken('#FFFFFF')[100],
     },
     primaryBg: getToken('#121212')[100],
     secondaryBg: getToken('#1F1F1F')[100],

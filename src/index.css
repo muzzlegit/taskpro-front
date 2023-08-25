@@ -13,6 +13,10 @@ a {
 input {
   outline: none;
 }
+
+button {
+  border: none;
+}
 button,
 input {
   font-family: 'Poppins', sans-serif;

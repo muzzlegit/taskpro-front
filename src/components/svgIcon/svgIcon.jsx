@@ -3,19 +3,12 @@ import sprite from 'assets/icons/sprite.svg';
 
 import { Svg } from './SvgIcon.styled';
 
-const SvgIcon = ({
-  svgName,
-  size,
-  stroke = 'none',
-  fill,
-  onChange,
-  ...rest
-}) => {
+const SvgIcon = ({ svgName, size, stroke, fill, onChange, ...rest }) => {
   return (
     <Svg
       width={size ?? '100%'}
       height={size ?? '100%'}
-      stroke={stroke}
+      stroke={stroke ?? 'inherit'}
       fill={fill ?? 'inherit'}
       {...rest}
     >

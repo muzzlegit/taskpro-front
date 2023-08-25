@@ -1,6 +1,6 @@
 import { useFormik } from 'formik';
 
-import { Input } from 'components';
+import { Input, PrimaryButton } from 'components';
 
 import { authSchema } from 'libs';
 
@@ -52,6 +52,9 @@ const RegisterForm = () => {
       {errors.password && touched.password ? (
         <Error>{errors.password}</Error>
       ) : null}
+      <PrimaryButton style={{ marginTop: '10px' }} variant="welcome">
+        Register Now
+      </PrimaryButton>
     </Container>
   );
 };
