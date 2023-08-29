@@ -27,7 +27,7 @@ const RegisterForm = () => {
         onChange={handleChange}
         onBlur={handleBlur}
         value={values.name}
-        isError={errors.name}
+        isError={errors.name && touched.name ? true : null}
       />
       {errors.name && touched.name ? <Error>{errors.name}</Error> : null}
       <Input
@@ -52,9 +52,7 @@ const RegisterForm = () => {
       {errors.password && touched.password ? (
         <Error>{errors.password}</Error>
       ) : null}
-      <PrimaryButton style={{ marginTop: '10px' }} variant="welcome">
-        Register Now
-      </PrimaryButton>
+      <PrimaryButton style={{ marginTop: '10px' }}>Register Now</PrimaryButton>
     </Container>
   );
 };

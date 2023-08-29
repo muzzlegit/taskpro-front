@@ -4,8 +4,9 @@ import { Welcome } from 'pages';
 import { useTheme } from 'hooks';
 
 const App = () => {
-  const { currentTheme, setThemeName } = useTheme('dark');
-  console.log(currentTheme);
+  const { currentTheme, setThemeName } = useTheme('violet');
+  console.log('🚀 ~ currentTheme:', currentTheme);
+
   return (
     <ThemeProvider theme={currentTheme}>
       <Routes>

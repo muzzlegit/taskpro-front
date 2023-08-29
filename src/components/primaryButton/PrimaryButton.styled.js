@@ -1,26 +1,4 @@
 import styled from '@emotion/styled';
-import { theme } from 'libs';
-
-const variants = {
-  welcome: {
-    button: {
-      color: theme.colors.welcomePrimaryBtn.text,
-      backgroundColor: theme.colors.welcomePrimaryBtn.primary,
-      ':hover,:focus': {
-        backgroundColor: theme.colors.welcomePrimaryBtn.acent,
-      },
-    },
-  },
-  user: {
-    button: {
-      color: theme.colors.primaryBtn?.text,
-      backgroundColor: theme.colors.primaryBtn?.primary,
-      ':hover,:focus': {
-        backgroundColor: theme.colors.primaryBtn?.acent,
-      },
-    },
-  },
-};
 
 export const Button = styled.button(
   {
@@ -35,7 +13,11 @@ export const Button = styled.button(
     cursor: 'pointer',
   },
   props => ({
-    ...variants[props.variant]?.button,
+    color: props.theme.colors.primaryBtn.text,
+    backgroundColor: props.theme.colors.primaryBtn.primary,
+    ':hover,:focus': {
+      backgroundColor: props.theme.colors.primaryBtn.acent,
+    },
   })
 );
 export const Icon = styled.span(

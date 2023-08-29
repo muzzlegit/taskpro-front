@@ -14,16 +14,16 @@ export const Inputfield = styled.input(
     fontSize: '14px',
   },
   props => ({
-    backgroundColor: props.theme.colors.token3[100],
-    color: props.theme.colors.token1[100],
+    backgroundColor: props.theme.colors.input.bg,
+    color: props.theme.colors.input.text,
     border: `1px solid ${
-      props.isError ? props.theme.colors.error : props.theme.colors.token4[80]
+      props.isError ? props.theme.colors.error : props.theme.colors.input.border
     }`,
     ':focus': {
       border: `2px solid ${
         props.isError
           ? props.theme.colors.error
-          : props.theme.colors.token4[100]
+          : props.theme.colors.input.border
       }`,
     },
   })

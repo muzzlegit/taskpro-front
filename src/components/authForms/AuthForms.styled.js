@@ -7,6 +7,6 @@ export const Container = styled.div(
     borderRadius: '8px',
   },
   props => ({
-    backgroundColor: props.theme.colors.token5[100],
+    backgroundColor: props.theme.colors.token10[100],
   })
 );
