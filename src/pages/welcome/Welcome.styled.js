@@ -39,13 +39,14 @@ export const Text = styled.p(
     color: props.theme.colors.welcomPrimary,
   })
 );
-export const Button = styled.button(
+export const Button = styled.div(
   {
     padding: '14px',
     width: '100%',
     maxWidth: '344px',
     fontSize: '14px',
     fontWeight: 500,
+    lineHeight: 1.5,
     cursor: 'pointer',
     border: 'none',
     borderRadius: '8px',

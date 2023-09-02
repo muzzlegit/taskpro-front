@@ -1,5 +1,6 @@
 {
   "workbench.settings.openDefaultKeybindings": true,
-  "editor.fontFamily": "Daddy Tima Mono, monospace",
-  "editor.fontSize": 18
+  "editor.fontFamily": "Daddy Tima Mono",
+  "editor.fontSize": 16,
+  "editor.fontLigatures": false
 }

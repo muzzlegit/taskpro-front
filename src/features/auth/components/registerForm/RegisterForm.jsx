@@ -2,9 +2,9 @@ import { useFormik } from 'formik';
 
 import { Input, PrimaryButton } from 'components';
 
-import { authSchema } from 'libs';
-
 import { Container, Error } from './RegisterForm.styled';
+
+import { authSchema } from 'utils';
 
 const RegisterForm = () => {
   const { values, errors, touched, handleChange, handleBlur } = useFormik({

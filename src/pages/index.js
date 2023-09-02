@@ -1,3 +1,4 @@
-import Welcome from './Welcom/Welcome';
+import Auth from './auth/Auth';
+import Welcome from './welcome/Welcome';
 
-export { Welcome };
+export { Welcome, Auth };

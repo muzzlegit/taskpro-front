@@ -1,22 +1,23 @@
-import { Route, Routes, Navigate } from 'react-router-dom';
 import { ThemeProvider } from '@emotion/react';
-import { Welcome } from 'pages';
 import { useTheme } from 'hooks';
+import { WelcomeLayout } from 'layouts';
+import { Auth, Welcome } from 'pages';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
 const App = () => {
-  const { currentTheme, setThemeName } = useTheme('violet');
-  console.log('🚀 ~ currentTheme:', currentTheme);
+  const { currentTheme } = useTheme();
 
   return (
     <ThemeProvider theme={currentTheme}>
       <Routes>
-        <Route path="/">
+        <Route path="/" element={<WelcomeLayout />}>
           <Route
             index
             // element={<Navigate to={!isLoggedIn ? '/welcome' : '/home'} />}
             element={<Navigate to={'/welcome'} />}
           />
           <Route path="welcome" element={<Welcome />} />
+          <Route path="auth/:id" element={<Auth />} />
         </Route>
       </Routes>
     </ThemeProvider>

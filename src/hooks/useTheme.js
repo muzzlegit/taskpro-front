@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
-import { theme, themesKit } from 'libs';
+import { useSelector } from 'react-redux/es/exports';
+import { getUserTheme } from 'state/userSlice';
+import { theme, themesKit } from 'utils';
 
-const useTheme = defaultTheme => {
-  const [themeName, setThemeName] = useState(defaultTheme ?? 'default');
+const useTheme = () => {
+  const themeName = useSelector(getUserTheme);
 
   const [currentTheme, setCurrentTheme] = useState({
     ...theme,
-    colors: { ...theme.colors, ...themesKit[defaultTheme ?? 'default'] },
+    colors: { ...theme.colors, ...themesKit[themeName ?? 'default'] },
   });
   console.log('🚀 ~ themeName:', themeName);
   console.log('🚀 ~ currentTheme:', currentTheme);
@@ -17,7 +19,7 @@ const useTheme = defaultTheme => {
     });
   }, [themeName]);
 
-  return { currentTheme, setThemeName };
+  return { currentTheme };
 };
 
 export default useTheme;
