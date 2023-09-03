@@ -5,7 +5,7 @@ import userWEBPx2 from 'assets/welcome/welcome@2x.webp';
 import userPNGx3 from 'assets/welcome/welcome@3x.png';
 import userWEBPx3 from 'assets/welcome/welcome@3x.webp';
 import { Logo } from 'components';
-import { useState } from 'react';
+import { useAuthForms } from 'features';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getIsRegister } from 'state/userSlice';
@@ -14,9 +14,8 @@ import { Button, Container, Img, Text } from './Welcome.styled';
 
 const Welcome = () => {
   const isRegister = useSelector(getIsRegister);
-  console.log(isRegister);
-  const [selectedButton, setSelectedButton] = useState(
-    isRegister ? 'login' : 'registration'
+  const { selectedForm, handleFormSelect } = useAuthForms(
+    isRegister ? 'login' : 'register'
   );
 
   return (
@@ -42,11 +41,11 @@ const Welcome = () => {
         Pro - Don't wait, start achieving your goals now!
       </Text>
       <Button
-        id="registration"
+        id="register"
         type="button"
-        isActive={selectedButton === 'registration' ? true : null}
+        isActive={selectedForm === 'register' ? true : null}
         onClick={e => {
-          setSelectedButton(e.currentTarget.id);
+          handleFormSelect(e.currentTarget.id);
         }}
       >
         <Link to="/auth/register" style={{ textAlign: 'center' }}>
@@ -57,9 +56,9 @@ const Welcome = () => {
         id="login"
         type="button"
         onClick={e => {
-          setSelectedButton(e.currentTarget.id);
+          handleFormSelect(e.currentTarget.id);
         }}
-        isActive={selectedButton === 'login' ? true : null}
+        isActive={selectedForm === 'login' ? true : null}
       >
         <Link to="/auth/login" style={{ textAlign: 'center' }}>
           Log In
