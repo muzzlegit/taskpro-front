@@ -1,4 +1,4 @@
-import WelcomeContent from '../features/welcome/components/welcomeContent/WelcomeContent';
+import WelcomeContent from '../pages/welcome/components/welcomeContent/WelcomeContent';
 import Input from './input/Input';
 import Logo from './logo/Logo';
 import PrimaryButton from './primaryButton/PrimaryButton';

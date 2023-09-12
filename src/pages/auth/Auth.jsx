@@ -1,29 +1,41 @@
-import { RegisterForm, useAuthForms } from 'features';
+import { LoginForm, RegisterForm } from './components';
+import { useAuthForms } from './hooks';
+
 import { Link, useParams } from 'react-router-dom';
-import { Container } from './Auth.styled';
+import { Container, LinksBox, LinkWrap } from './Auth.styled';
 
 const Auth = () => {
   const { id } = useParams();
   const { selectedForm, handleFormSelect } = useAuthForms(id);
+  console.log(selectedForm === 'login');
   return (
     <Container>
-      <Link
-        to="/auth/register"
-        onClick={() => {
-          handleFormSelect('register');
-        }}
-      >
-        Registration
-      </Link>
-      <Link
-        to="/auth/login"
-        onClick={() => {
-          handleFormSelect('login');
-        }}
-      >
-        Log In
-      </Link>
+      <LinksBox>
+        <LinkWrap isActive={selectedForm === 'register'}>
+          <Link
+            to="/auth/register"
+            onClick={() => {
+              handleFormSelect('register');
+            }}
+          >
+            Registration
+          </Link>
+        </LinkWrap>
+        <LinkWrap isActive={selectedForm === 'login'}>
+          <Link
+            to="/auth/login"
+            onClick={() => {
+              handleFormSelect('login');
+            }}
+            active={selectedForm === 'login' ? '' : null}
+          >
+            Log In
+          </Link>
+        </LinkWrap>
+      </LinksBox>
+
       {selectedForm === 'register' ? <RegisterForm /> : null}
+      {selectedForm === 'login' ? <LoginForm /> : null}
     </Container>
   );
 };

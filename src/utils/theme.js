@@ -27,7 +27,7 @@ export const themesKit = {
     input: {
       bg: tokens.token13[100],
       text: tokens.token1[100],
-      border: tokens.token5[100],
+      border: tokens.token5[40],
     },
     primaryBtn: {
       primary: tokens.token5[100],

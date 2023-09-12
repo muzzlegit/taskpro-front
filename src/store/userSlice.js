@@ -11,6 +11,9 @@ export const userSlice = createSlice({
     isRegister: false,
   },
   reducers: {
+    setRegisterChecker(state) {
+      state.isRegister = true;
+    },
     refreshUser(state, action) {
       state.user = { ...action.payload };
       state.isLogin = true;
@@ -39,8 +42,13 @@ const persistedСontactsReducer = persistReducer(
   userSlice.reducer
 );
 //Actions
-export const { setUser, setUserStatus, removeUser, refreshUser } =
-  userSlice.actions;
+export const {
+  setRegisterChecker,
+  setUser,
+  setUserStatus,
+  removeUser,
+  refreshUser,
+} = userSlice.actions;
 //Reducer
 export const userReducer = persistedСontactsReducer;
 //Selectors

@@ -5,10 +5,10 @@ import userWEBPx2 from 'assets/welcome/welcome@2x.webp';
 import userPNGx3 from 'assets/welcome/welcome@3x.png';
 import userWEBPx3 from 'assets/welcome/welcome@3x.webp';
 import { Logo } from 'components';
-import { useAuthForms } from 'features';
+import { useAuthForms } from 'pages/auth/hooks';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getIsRegister } from 'state/userSlice';
+import { getIsRegister } from 'store/userSlice';
 
 import { Button, Container, Img, Text } from './Welcome.styled';
 
