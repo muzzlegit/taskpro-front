@@ -25,7 +25,18 @@ const useAuth = () => {
     } catch (error) {}
   };
 
-  return { handleRegister };
+  const handleLogin = async user => {
+    try {
+      const { data, error } = await loginUser(user);
+      if (data) {
+        dispatch(setUser(data));
+      }
+
+      if (error) throw error;
+    } catch (error) {}
+  };
+
+  return { handleRegister, handleLogin };
 };
 
 export default useAuth;

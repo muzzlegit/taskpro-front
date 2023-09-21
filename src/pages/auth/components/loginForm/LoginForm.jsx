@@ -4,21 +4,28 @@ import { Input, PrimaryButton } from 'components';
 
 import { Container, Error } from './LoginForm.styled';
 
+import { useAuth } from 'pages/auth/hooks';
 import { authSchema } from 'utils';
 
 const LoginForm = () => {
-  const { values, errors, touched, handleChange, handleBlur } = useFormik({
-    initialValues: {
-      email: '',
-      password: '',
-    },
-    onSubmit: () => {
-      console.log('first');
-    },
-    validationSchema: authSchema,
-  });
+  const { handleLogin } = useAuth();
+  const { values, errors, touched, handleChange, handleBlur, handleSubmit } =
+    useFormik({
+      initialValues: {
+        email: '',
+        password: '',
+      },
+      onSubmit: handleLogin,
+      validationSchema: authSchema,
+    });
   return (
-    <Container name="registerForm">
+    <Container
+      name="registerForm"
+      onSubmit={e => {
+        e.preventDefault();
+        handleSubmit();
+      }}
+    >
       <Input
         type="email"
         name="email"

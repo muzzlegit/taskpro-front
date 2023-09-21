@@ -7,7 +7,6 @@ import { Container, LinksBox, LinkWrap } from './Auth.styled';
 const Auth = () => {
   const { id } = useParams();
   const { selectedForm, handleFormSelect } = useAuthForms(id);
-  console.log(selectedForm === 'login');
   return (
     <Container>
       <LinksBox>

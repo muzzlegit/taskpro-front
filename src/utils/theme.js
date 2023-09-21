@@ -48,6 +48,9 @@ export const themesKit = {
       icon: getToken('#161616')[100],
       stroke: getToken('#FFFFFF')[100],
     },
+    sidebar: {
+      background: tokens.token8[100],
+    },
     primaryBg: getToken('#121212')[100],
     secondaryBg: getToken('#1F1F1F')[100],
     headerBg: getToken('#161616')[100],
@@ -62,6 +65,9 @@ export const themesKit = {
       text: tokens.token11[100],
       icon: tokens.token1[100],
     },
+    sidebar: {
+      background: tokens.token1[100],
+    },
     primaryBg: getToken('#FFFFFF')[100],
     secondaryBg: getToken('#F6F6F7')[100],
     headerBg: getToken('#FCFCFC')[100],
@@ -75,6 +81,9 @@ export const themesKit = {
       primary: tokens.token14[100],
       text: tokens.token1[100],
       icon: tokens.token15[100],
+    },
+    sidebar: {
+      background: tokens.token15[100],
     },
     primaryBg: getToken('#5255BC')[100],
     secondaryBg: getToken('#ECEDFD')[100],
@@ -149,7 +158,4 @@ function getToken(hex) {
     20: hexRgb(hex, { format: 'css', alpha: 0.2 }),
     10: hexRgb(hex, { format: 'css', alpha: 0.1 }),
   };
-}
-function getRGBAToken(hex, alpha) {
-  return hexRgb(hex, { format: 'css', alpha });
 }

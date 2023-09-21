@@ -43,7 +43,7 @@ export const authApi = createApi({
       invalidatesTags: ['user'],
     }),
     refreshUser: builder.query({
-      query: () => '/users/current',
+      query: () => '/api/auth/current',
       providesTags: ['user'],
     }),
   }),

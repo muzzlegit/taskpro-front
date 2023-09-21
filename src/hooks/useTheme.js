@@ -10,8 +10,7 @@ const useTheme = () => {
     ...theme,
     colors: { ...theme.colors, ...themesKit[themeName ?? 'default'] },
   });
-  console.log('🚀 ~ themeName:', themeName);
-  console.log('🚀 ~ currentTheme:', currentTheme);
+
   useEffect(() => {
     setCurrentTheme({
       ...theme,
