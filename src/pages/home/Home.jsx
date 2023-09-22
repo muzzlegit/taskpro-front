@@ -1,13 +1,15 @@
-import { Sidebar } from './components';
-import { Container, Section } from './Home.styled';
+import { Header, ScreensPage, Sidebar } from 'components';
+import { Main } from './Home.styled';
 
 const Home = () => {
   return (
-    <Section>
-      <Container>
+    <main>
+      <Main>
         <Sidebar></Sidebar>
-      </Container>
-    </Section>
+        <Header />
+        <ScreensPage />
+      </Main>
+    </main>
   );
 };
 

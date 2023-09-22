@@ -2,21 +2,20 @@ import { useFormik } from 'formik';
 
 import { Input, PrimaryButton } from 'components';
 
-import { Container, Error } from './RegisterForm.styled';
+import { Container, Error } from './LoginForm.styled';
 
-import { useAuth } from 'pages/auth/hooks';
+import { useAuth } from 'hooks';
 import { authSchema } from 'utils';
 
-const RegisterForm = () => {
-  const { handleRegister } = useAuth();
+const LoginForm = () => {
+  const { handleLogin } = useAuth();
   const { values, errors, touched, handleChange, handleBlur, handleSubmit } =
     useFormik({
       initialValues: {
-        name: '',
         email: '',
         password: '',
       },
-      onSubmit: handleRegister,
+      onSubmit: handleLogin,
       validationSchema: authSchema,
     });
   return (
@@ -27,16 +26,6 @@ const RegisterForm = () => {
         handleSubmit();
       }}
     >
-      <Input
-        type="text"
-        name="name"
-        placeholder="Enter your name"
-        onChange={handleChange}
-        onBlur={handleBlur}
-        value={values.name}
-        isError={errors.name && touched.name ? true : null}
-      />
-      {errors.name && touched.name ? <Error>{errors.name}</Error> : null}
       <Input
         type="email"
         name="email"
@@ -50,7 +39,7 @@ const RegisterForm = () => {
       <Input
         type="password"
         name="password"
-        placeholder="Create a password"
+        placeholder="Confirm a password"
         onChange={handleChange}
         onBlur={handleBlur}
         value={values.password}
@@ -59,9 +48,9 @@ const RegisterForm = () => {
       {errors.password && touched.password ? (
         <Error>{errors.password}</Error>
       ) : null}
-      <PrimaryButton style={{ marginTop: '10px' }}>Register Now</PrimaryButton>
+      <PrimaryButton style={{ marginTop: '10px' }}>Log in Now</PrimaryButton>
     </Container>
   );
 };
 
-export default RegisterForm;
+export default LoginForm;

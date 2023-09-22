@@ -11,6 +11,7 @@ const PrivateRoute = ({
 }) => {
   const isLogin = useSelector(getIsLogin);
   const shouldRedirect = !isLogin && !isFetching;
+
   return shouldRedirect ? <Navigate to={redirectTo} /> : <Component />;
 };
 

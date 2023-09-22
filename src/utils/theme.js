@@ -15,6 +15,8 @@ const tokens = {
   token13: getToken('#1F1F1F'),
   token14: getToken('#ECEDFD'),
   token15: getToken('#5255BC'),
+  token16: getToken('#FCFCFC'),
+  token17: getToken('#F6F6F7'),
 };
 
 export const themesKit = {
@@ -51,6 +53,16 @@ export const themesKit = {
     sidebar: {
       background: tokens.token8[100],
     },
+    header: {
+      background: tokens.token11[100],
+    },
+    screens: {
+      background: tokens.token13[100],
+    },
+    logout: {
+      text: tokens.token1[100],
+      icon: tokens.token5[100],
+    },
     primaryBg: getToken('#121212')[100],
     secondaryBg: getToken('#1F1F1F')[100],
     headerBg: getToken('#161616')[100],
@@ -68,6 +80,16 @@ export const themesKit = {
     sidebar: {
       background: tokens.token1[100],
     },
+    header: {
+      background: tokens.token16[100],
+    },
+    screens: {
+      background: tokens.token17[100],
+    },
+    logout: {
+      text: tokens.token11[100],
+      icon: tokens.token5[100],
+    },
     primaryBg: getToken('#FFFFFF')[100],
     secondaryBg: getToken('#F6F6F7')[100],
     headerBg: getToken('#FCFCFC')[100],
@@ -84,6 +106,16 @@ export const themesKit = {
     },
     sidebar: {
       background: tokens.token15[100],
+    },
+    header: {
+      background: tokens.token1[100],
+    },
+    screens: {
+      background: tokens.token14[100],
+    },
+    logout: {
+      text: tokens.token1[100],
+      icon: tokens.token1[100],
     },
     primaryBg: getToken('#5255BC')[100],
     secondaryBg: getToken('#ECEDFD')[100],

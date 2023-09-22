@@ -1,5 +1,5 @@
-import { LoginForm, RegisterForm } from './components';
-import { useAuthForms } from './hooks';
+import { LoginForm, RegisterForm } from 'components';
+import { useAuthForms } from 'hooks';
 
 import { Link, useParams } from 'react-router-dom';
 import { Container, LinksBox, LinkWrap } from './Auth.styled';
