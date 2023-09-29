@@ -9,25 +9,34 @@ export const userSlice = createSlice({
     token: null,
     isLogin: false,
     isRegister: false,
+    theme: 'dark',
   },
   reducers: {
     setRegisterChecker(state) {
       state.isRegister = true;
     },
     refreshUser(state, action) {
-      state.user = { ...action.payload };
+      const user = action.payload;
+      state.user = { ...user };
       state.isLogin = true;
+      state.theme = user.theme;
     },
     setUser(state, action) {
       const { user, token } = action.payload;
       state.user = { ...user };
       state.token = token;
       state.isLogin = true;
+      state.theme = user.theme;
     },
     removeUser(state) {
       state.user = { name: null, email: null, theme: null, avatarURL: null };
       state.token = null;
       state.isLogin = false;
+      state.theme = null;
+    },
+    setUserTheme(state, action) {
+      const user = action.payload;
+      state.theme = user.theme;
     },
   },
 });
@@ -35,7 +44,7 @@ export const userSlice = createSlice({
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['token', 'isRegister'],
+  whitelist: ['token', 'isRegister', 'theme'],
 };
 const persistedСontactsReducer = persistReducer(
   persistConfig,
@@ -48,6 +57,7 @@ export const {
   setUserStatus,
   removeUser,
   refreshUser,
+  setUserTheme,
 } = userSlice.actions;
 //Reducer
 export const userReducer = persistedСontactsReducer;
@@ -56,4 +66,4 @@ export const getUser = state => state.auth.user;
 export const getIsLogin = state => state.auth.isLogin;
 export const getToken = state => state.auth.token;
 export const getIsRegister = state => state.auth.isRegister;
-export const getUserTheme = state => state.auth.user.theme;
+export const getUserTheme = state => state.auth.theme;

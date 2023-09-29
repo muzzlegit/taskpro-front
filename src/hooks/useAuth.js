@@ -5,7 +5,7 @@ import {
   useLogoutUserMutation,
   useRefreshUserQuery,
   useRegisterUserMutation,
-} from 'store/authSlice';
+} from 'store/authApi';
 import {
   getIsLogin,
   getToken,

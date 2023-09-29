@@ -11,7 +11,7 @@ import {
 //slices
 // import { contactsApi } from './contactsSlice';
 // import { filterReducer } from 'redux/filterSlice.js';
-import { authApi } from './authSlice';
+import { authApi } from './authApi';
 import { userReducer } from './userSlice';
 
 export const store = configureStore({

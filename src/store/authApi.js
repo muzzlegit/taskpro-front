@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 const BASE_URL = 'http://localhost:10000';
 
 export const authApi = createApi({
-  reducerPath: 'userApi',
+  reducerPath: 'authApi',
   baseQuery: fetchBaseQuery({
     baseUrl: BASE_URL,
     prepareHeaders: (headers, { getState }) => {
@@ -46,6 +46,14 @@ export const authApi = createApi({
       query: () => '/api/auth/current',
       providesTags: ['user'],
     }),
+    updateUserTheme: builder.mutation({
+      query: newTheme => ({
+        url: '/api/users/theme',
+        method: 'POST',
+        body: newTheme,
+      }),
+      invalidatesTags: ['user'],
+    }),
   }),
 });
 
@@ -54,4 +62,5 @@ export const {
   useLoginUserMutation,
   useLogoutUserMutation,
   useRefreshUserQuery,
+  useUpdateUserThemeMutation,
 } = authApi;
