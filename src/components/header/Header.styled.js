@@ -7,6 +7,7 @@ export const Container = styled.header(
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'end',
+    gap: '14px',
   },
   props => ({
     backgroundColor: props.theme.colors.header.background,

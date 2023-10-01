@@ -34,6 +34,8 @@ export const Item = styled.li(
     ':hover,:focus': {
       color: props.theme.colors.themeSelector.acent,
     },
-    color: props.theme.colors.themeSelector.listText,
+    color: props.isActive
+      ? props.theme.colors.themeSelector.acent
+      : props.theme.colors.themeSelector.listText,
   })
 );

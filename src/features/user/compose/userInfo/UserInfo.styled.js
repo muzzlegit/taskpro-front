@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div({
-  position: 'relative',
-  width: 'fit-content',
+  display: 'flex',
+  alignItems: 'center',
+  gap: '8px',
+  cursor: 'pointer',
 });

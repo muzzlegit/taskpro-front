@@ -8,6 +8,7 @@ export const Container = styled.div(
     cursor: 'pointer',
     fontSize: '16px',
     fontWeight: 500,
+    fill: 'none',
   },
   props => ({
     color: props.theme.colors.logout.text,

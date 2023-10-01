@@ -35,8 +35,8 @@ export const userSlice = createSlice({
       state.theme = null;
     },
     setUserTheme(state, action) {
-      const user = action.payload;
-      state.theme = user.theme;
+      state.user.theme = action.payload;
+      state.theme = action.payload;
     },
   },
 });

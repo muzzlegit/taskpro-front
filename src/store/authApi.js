@@ -49,7 +49,7 @@ export const authApi = createApi({
     updateUserTheme: builder.mutation({
       query: newTheme => ({
         url: '/api/users/theme',
-        method: 'POST',
+        method: 'PATCH',
         body: newTheme,
       }),
       invalidatesTags: ['user'],

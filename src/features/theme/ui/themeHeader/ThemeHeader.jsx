@@ -1,13 +1,17 @@
-import { SvgIcon } from 'components';
+import PropTypes from 'prop-types';
 import { Container } from './ThemeHeader.styled';
 
-const ThemeHeader = () => {
+const ThemeHeader = ({ icon }) => {
   return (
     <Container>
       <span>Theme</span>
-      <SvgIcon svgName="icon-arrow-down" size="16px" />
+      {icon}
     </Container>
   );
 };
 
 export default ThemeHeader;
+
+ThemeHeader.propTypes = {
+  icon: PropTypes.element.isRequired,
+};
